@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,112 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SieveOfEratosthenes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Maximum Number here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-c1-a9u">
+                                <rect key="frame" x="55.5" y="68" width="209.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oC-A5-Zkx">
+                                <rect key="frame" x="8" y="152" width="304" height="408"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ka1-hk-uVP">
+                                    <size key="itemSize" width="50" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="primeCell" id="vee-gq-fhD" customClass="PrimeCollectionViewCell" customModule="SieveOfEratosthenes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-5p-Bt2">
+                                                    <rect key="frame" x="0.5" y="4.5" width="49" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="gxa-5p-Bt2" firstAttribute="centerY" secondItem="vee-gq-fhD" secondAttribute="centerY" id="WR1-lm-msS"/>
+                                            <constraint firstItem="gxa-5p-Bt2" firstAttribute="centerX" secondItem="vee-gq-fhD" secondAttribute="centerX" id="jd2-4c-bWk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="gxa-5p-Bt2" id="8hX-Zt-uDR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TsS-dG-hbs">
+                                <rect key="frame" x="150" y="284" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sieve of Eratosthenes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-aW-oNB">
+                                <rect key="frame" x="55.5" y="28" width="209.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7m-Jj-UiW">
+                                <rect key="frame" x="128" y="106" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="CalculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jjH-tk-1lR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE1-F2-8eP">
+                                <rect key="frame" x="8" y="118" width="30" height="30"/>
+                                <state key="normal" title="⤒"/>
+                                <connections>
+                                    <action selector="scrollToTopTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6V-oz-WHr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkK-pQ-Kmf">
+                                <rect key="frame" x="282" y="118" width="30" height="30"/>
+                                <state key="normal" title="⤓"/>
+                                <connections>
+                                    <action selector="scrollToBottomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kBw-td-DJ9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TsS-dG-hbs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3sA-Ar-LeD"/>
+                            <constraint firstItem="BkK-pQ-Kmf" firstAttribute="top" secondItem="nE1-F2-8eP" secondAttribute="top" id="9zZ-G2-fen"/>
+                            <constraint firstItem="zWi-c1-a9u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BKr-qt-0w3"/>
+                            <constraint firstItem="0oC-A5-Zkx" firstAttribute="top" secondItem="l7m-Jj-UiW" secondAttribute="bottom" constant="16" id="Dl1-EG-NMl"/>
+                            <constraint firstItem="l7m-Jj-UiW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Npk-Bg-CPj"/>
+                            <constraint firstItem="l7m-Jj-UiW" firstAttribute="top" secondItem="zWi-c1-a9u" secondAttribute="bottom" constant="8" id="OCp-2B-tSj"/>
+                            <constraint firstItem="zWi-c1-a9u" firstAttribute="width" secondItem="5L8-aW-oNB" secondAttribute="width" id="Pqe-d9-z3p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0oC-A5-Zkx" secondAttribute="bottom" constant="8" id="Quu-Gh-ZIr"/>
+                            <constraint firstItem="5L8-aW-oNB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="WxR-jn-sTP"/>
+                            <constraint firstItem="0oC-A5-Zkx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="X2V-17-4uk"/>
+                            <constraint firstItem="nE1-F2-8eP" firstAttribute="leading" secondItem="0oC-A5-Zkx" secondAttribute="leading" id="aeo-ea-QDa"/>
+                            <constraint firstItem="TsS-dG-hbs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bGV-k7-mJY"/>
+                            <constraint firstItem="zWi-c1-a9u" firstAttribute="top" secondItem="5L8-aW-oNB" secondAttribute="bottom" constant="16" id="kTw-H0-bo0"/>
+                            <constraint firstItem="5L8-aW-oNB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="l3U-mU-AHA"/>
+                            <constraint firstItem="0oC-A5-Zkx" firstAttribute="top" secondItem="nE1-F2-8eP" secondAttribute="bottom" constant="4" id="o5T-e4-C48"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0oC-A5-Zkx" secondAttribute="trailing" constant="8" id="r4Y-5w-tHY"/>
+                            <constraint firstItem="BkK-pQ-Kmf" firstAttribute="trailing" secondItem="0oC-A5-Zkx" secondAttribute="trailing" id="zBl-CE-55x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="TsS-dG-hbs" id="Clj-tU-pj3"/>
+                        <outlet property="collectionView" destination="0oC-A5-Zkx" id="5Gi-6B-uRu"/>
+                        <outlet property="scrollToBottomButton" destination="BkK-pQ-Kmf" id="F5W-bL-Dtq"/>
+                        <outlet property="scrollToTopButton" destination="nE1-F2-8eP" id="KMw-xB-xLI"/>
+                        <outlet property="textField" destination="zWi-c1-a9u" id="7kc-V0-3Qs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,7 @@
 		663AA698225DA7A000012FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663AA697225DA7A000012FF8 /* Assets.xcassets */; };
 		663AA69B225DA7A000012FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663AA699225DA7A000012FF8 /* LaunchScreen.storyboard */; };
 		663AA6A3225DA7CD00012FF8 /* SieveOfEratosthenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663AA6A2225DA7CD00012FF8 /* SieveOfEratosthenes.swift */; };
+		663AA6A5225DB70400012FF8 /* PrimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663AA6A4225DB70400012FF8 /* PrimeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		663AA69A225DA7A000012FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663AA69C225DA7A000012FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		663AA6A2225DA7CD00012FF8 /* SieveOfEratosthenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SieveOfEratosthenes.swift; sourceTree = "<group>"; };
+		663AA6A4225DB70400012FF8 /* PrimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				663AA690225DA79E00012FF8 /* AppDelegate.swift */,
 				663AA692225DA79E00012FF8 /* ViewController.swift */,
 				663AA694225DA79E00012FF8 /* Main.storyboard */,
+				663AA6A4225DB70400012FF8 /* PrimeCollectionViewCell.swift */,
 				663AA697225DA7A000012FF8 /* Assets.xcassets */,
 				663AA699225DA7A000012FF8 /* LaunchScreen.storyboard */,
 				663AA69C225DA7A000012FF8 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663AA6A5225DB70400012FF8 /* PrimeCollectionViewCell.swift in Sources */,
 				663AA693225DA79E00012FF8 /* ViewController.swift in Sources */,
 				663AA691225DA79E00012FF8 /* AppDelegate.swift in Sources */,
 				663AA6A3225DA7CD00012FF8 /* SieveOfEratosthenes.swift in Sources */,

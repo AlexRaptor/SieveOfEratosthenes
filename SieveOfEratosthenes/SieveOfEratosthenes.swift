@@ -12,16 +12,20 @@ class SieveOfEratosthenes {
     
     private init() {}
     
-    static func getPrimeArray(for maxinum: Int) -> [Int]? {
+    static func getPrimeArray(for maximum: Int) -> [Int] {
         
-        var array = Array(repeating: true, count: maxinum + 1)
+        if maximum < 2 {
+            return [Int]()
+        }
+        
+        var array = Array(repeating: true, count: maximum + 1)
 
         var i = 2
-        while (i * i) <= maxinum {
+        while (i * i) <= maximum {
             
             if array[i] {
                 
-                for j in stride(from: (i * i), through: maxinum, by: i) {
+                for j in stride(from: (i * i), through: maximum, by: i) {
                     array[j] = false
                 }
             }
